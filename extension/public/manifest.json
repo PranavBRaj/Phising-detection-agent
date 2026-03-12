@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Fraud Detector",
+  "version": "1.0.0",
+  "description": "Detects fraudulent URLs by tracing redirects and analysing domain patterns.",
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webNavigation"
+  ],
+
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Fraud Detector"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

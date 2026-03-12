@@ -1,0 +1,26 @@
+# Python virtual environment
+.week_4/
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Environment variables (contains secrets — never commit)
+backend/.env
+
+# Alembic compiled
+*.pyc
+
+# Node / Extension
+extension/node_modules/
+extension/dist/
+
+# OS
+.DS_Store
+Thumbs.db
